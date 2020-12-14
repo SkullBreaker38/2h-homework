@@ -18,11 +18,13 @@ export class TicketsListComponent implements OnInit {
   
 
   ngOnInit(): void {
+    //get users list
   this.users$.subscribe((users) => {
       this.users = users
     })
   }
 
+  // get user name
   getUserName(id:number): String{
     if (this.users && id) {
       const res = this.users.find((user: User) => user.id === id);

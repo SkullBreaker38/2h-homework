@@ -37,12 +37,12 @@ export class TicketDetailsComponent implements OnInit {
 
       };
       this.user$ = this.backendService.user(value.assigneeId);
-      this.isSelected = value.assigneeId;
-      this.isCompleted = value.completed;
+      this.isSelected = value.assigneeId; // get and set value of  user 
+      this.isCompleted = value.completed; // get and set value of  completed 
     }
   })
   }
-
+// set ticket user 
   onChange(selection){
     const id = selection.target.value;
     this.backendService.assign(this.ticket.id,id).subscribe();
@@ -50,6 +50,8 @@ export class TicketDetailsComponent implements OnInit {
 
 
   }
+
+  // set ticket completed 
   completeTicket(value){
     console.log(value.target.checked);
     this.backendService.complete(this.ticket.id,value.target.checked).subscribe();
