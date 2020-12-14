@@ -39,4 +39,16 @@ beforeEach(() => {
   });
 });
 
+it(' should return ticket with id 0 ',
+(done: DoneFn) => {
+service.ticket(0).subscribe(value => {
+  expect(value).not.toBeNull();
+  expect(value.id).toEqual(storedTickets[0].id)
+  expect(value.completed).toEqual(storedTickets[0].completed)
+  expect(value.description).toEqual(storedTickets[0].description)
+  expect(value.assigneeId).toEqual(storedTickets[0].assigneeId)
+  done();
+});
+});
+
 })
