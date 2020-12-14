@@ -1,0 +1,9 @@
+<h3>List of Tickets</h3>
+<ul>
+    <li [ngClass]="{'list-group-item': true}" *ngFor="let ticket of tickets$ | async">
+
+        Ticket: {{ ticket.id }}, {{ ticket.description }}
+        <p>Assign User: {{getUserName(ticket.assigneeId)}}</p>
+        Completed : {{ ticket.completed }}
+    </li>
+</ul>
