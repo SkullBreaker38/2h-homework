@@ -1,0 +1,11 @@
+<h3>New Ticket</h3>
+<form [formGroup]="addTicketForm" (ngSubmit)="onSubmit(addTicketForm)">
+    <div class="form-group">
+        <label for="description">
+            description du ticket
+  </label>
+        <input type="text" id="description" class="form-control" formControlName="description">
+    </div>
+
+    <button class="button" type="submit">Create new ticket</button>
+</form>

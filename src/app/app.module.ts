@@ -6,16 +6,17 @@ import { TicketsListComponent } from './tickets-list/tickets-list.component';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TicketDetailsComponent } from './ticket-details/ticket-details.component';
+import { TicketAddComponent } from './ticket-add/ticket-add.component';
 
 const appRoutes: Routes = [
     { path: 'tickets', component: TicketsListComponent },
     { path: 'ticket/:id', component: TicketDetailsComponent },
-    //{ path: 'edit', component: EditAppareilComponent },
+    { path: 'new', component: TicketAddComponent },
     {path:'', component:TicketsListComponent}
   ];
 
 @NgModule({
-    declarations: [AppComponent, TicketsListComponent, TicketDetailsComponent],
+    declarations: [AppComponent, TicketsListComponent, TicketDetailsComponent, TicketAddComponent],
     imports: [BrowserModule,
         FormsModule,
         ReactiveFormsModule,
