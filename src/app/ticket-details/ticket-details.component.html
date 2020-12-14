@@ -1,0 +1,20 @@
+<div class="form-group">
+    <label for="id">
+        Ticket:{{(ticket$ |async)?.id}}
+</label>
+</div>
+<div class="form-group">
+    <label for="description">
+     {{ (ticket$ | async)?.description }}
+</label>
+</div>
+<div class="form-group">
+    <select [(value)]="isSelected" (change)="onChange($event)">
+        <option *ngFor="let user of users$ | async" [value]="user.id">{{user.name}}</option>
+    </select>
+</div>
+<div class="form-group">
+    <input type="checkbox" name="completed" id="completed" [(ngModel)]="isCompleted" [(value)]="isSelected" (change)="completeTicket($event)">Completed
+
+</div>
+<button routerLink="/">Return to list</button>
